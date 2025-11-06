@@ -7,12 +7,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: ✅ Initialization
-        run: echo "Initialization Completed"
+      - name: ✅ Step 1 - Initialization
+        run: echo "Starting the workflow..."
 
-      - name: ✅ Execution
-        run: echo "Execution Completed"
+      - name: ✅ Step 2 - Adding Two Numbers
+        run: |
+          num1=10
+          num2=20
+          sum=$((num1 + num2))
+          echo "The sum of $num1 and $num2 is: $sum"
 
-      - name: ✅ Final
-        run: echo "Final Stage Completed"
+      - name: ✅ Step 3 - Final
+        run: echo "Workflow Completed Successfully ✅"

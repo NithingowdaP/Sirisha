@@ -1,23 +1,9 @@
-name: Three Step Workflow
+# Take input from the user
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 
-on:
-  push:
-    branches: ["main"]
+# Add the numbers
+sum = a + b
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: ✅ Step 1 - Initialization
-        run: echo "Starting the workflow..."
-
-      - name: ✅ Step 2 - Adding Two Numbers
-        run: |
-          num1=10
-          num2=20
-          sum=$((num1 + num2))
-          echo "The sum of $num1 and $num2 is: $sum"
-
-      - name: ✅ Step 3 - Final
-        run: echo "Workflow Completed Successfully ✅"
+# Display the result
+print("The sum is:", sum)

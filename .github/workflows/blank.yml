@@ -1,0 +1,29 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  execution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Execution Stage
+        run: echo "Execution Stage ✔"
+
+  installation:
+    runs-on: ubuntu-latest
+    needs: execution
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation Stage
+        run: echo "Installation Stage ✔"
+
+  final:
+    runs-on: ubuntu-latest
+    needs: installation
+    steps:
+      - uses: actions/checkout@v3
+      - name: Final Stage
+        run: echo "Final Stage Done 🎉"

@@ -2,15 +2,15 @@ name: Simple Workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ✅ Step 1: Checkout code
+      - name: Step 1: Checkout code
         uses: actions/checkout@v3
 
-      - name: ✅ Step 2: Run Script
+      - name: Step 2: Run Script
         run: echo "Workflow Running ✅"
